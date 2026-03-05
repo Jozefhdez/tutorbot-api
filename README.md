@@ -2,12 +2,28 @@
 
 This is a Spring Boot REST API for a campus tutoring system.
 
-## How to Run
-1. Clone the repository.
-2. Open the project in IntelliJ IDEA.
-3. Wait for Maven dependencies to load.
-4. Run `TutorbotApplication.java`.
-5. The server will start on `http://localhost:8080`.
+### Option 1: IntelliJ IDEA (Recommended)
+1. Open the project in IntelliJ.
+2. Wait for Maven dependencies to load.
+3. Run `TutorbotApplication.java`.
+
+### Option 2: Terminal (Universal)
+If you have Maven installed globally:
+```bash
+mvn spring-boot:run
+```
+If you do not have Maven installed, use the included Maven Wrapper:
+
+On macOS/Linux:
+```bash
+./mvnw spring-boot:run
+```
+On Windows:
+```bash
+.\mvnw.cmd spring-boot:run
+```
+
+The server will start on http://localhost:8080.
 
 ## API Endpoints
 
