@@ -21,9 +21,10 @@ public class StudentService {
         return repository.findById(id);
     }
 
-    public void registerStudent(Student s) {
+    public Student registerStudent(Student s) {
         int nextId = repository.findAll().size() + 1;
         s.setId(nextId);
         repository.save(s);
+        return s;
     }
 }

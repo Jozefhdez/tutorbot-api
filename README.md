@@ -32,7 +32,7 @@ The server will start on http://localhost:8080.
 | :--- | :--- | :--- |
 | GET | `/api/students` | List all students |
 | GET | `/api/students/{id}` | Get student by ID (Returns 404 if not found) |
-| POST | `/api/students` | Register a new student |
+| POST | `/api/students` | Register a new student (returns saved student with assigned ID) |
 | GET | `/api/students/{id}/feedback` | **Bonus:** View submission history |
 
 ### Exercises
@@ -40,7 +40,11 @@ The server will start on http://localhost:8080.
 | :--- | :--- | :--- |
 | GET | `/api/exercises` | List all exercises |
 | GET | `/api/exercises?difficulty={val}` | Filter exercises by level |
-| POST | `/api/exercises/submit` | Submit an answer and get a score |
+| POST | `/api/exercises/submit` | Submit an answer and get a score (`100` if correct, `40` if incorrect with encouragement) |
+
+### Answer matching behavior
+- Submission matching is case-insensitive and trims leading/trailing spaces.
+- Correct answers are stored in each exercise model and hidden from API responses.
 
 ## Postman Screenshots
 Below are the results of the API tests.

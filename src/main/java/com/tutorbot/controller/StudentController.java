@@ -26,8 +26,8 @@ public class StudentController {
     }
 
     @PostMapping
-    public void registerStudent(@RequestBody Student student) {
-        studentService.registerStudent(student);
+    public Student registerStudent(@RequestBody Student student) {
+        return studentService.registerStudent(student);
     }
 
     @GetMapping("/{id}")

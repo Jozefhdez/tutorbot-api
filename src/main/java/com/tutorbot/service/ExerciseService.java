@@ -35,14 +35,15 @@ public class ExerciseService {
             return null;
         }
 
-        String correctAnswer = getCorrectAnswerForId(exerciseId);
-        boolean isCorrect = correctAnswer.equals(answer);
+        String submittedAnswer = answer == null ? "" : answer.trim();
+        String expectedAnswer = ex.getCorrectAnswer() == null ? "" : ex.getCorrectAnswer().trim();
+        boolean isCorrect = expectedAnswer.equalsIgnoreCase(submittedAnswer);
 
         Feedback fb;
         if (isCorrect) {
             fb = new Feedback(studentId, exerciseId, answer, 100, "Correct.", true);
         } else {
-            fb = new Feedback(studentId, exerciseId, answer, 0, "Incorrect", false);
+            fb = new Feedback(studentId, exerciseId, answer, 40, "Not quite, keep trying!", false);
         }
 
         feedbackRepo.save(fb);
@@ -51,15 +52,5 @@ public class ExerciseService {
 
     public List<Feedback> getFeedbackByStudent(int studentId) {
         return feedbackRepo.findByStudentId(studentId);
-    }
-
-    private String getCorrectAnswerForId(int id) {
-        return switch (id) {
-            case 1 -> "@RestController";
-            case 2 -> "extends";
-            case 3 -> "&";
-            case 4 -> "eax";
-            default -> "unknown";
-        };
     }
 }
