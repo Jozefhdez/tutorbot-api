@@ -10,7 +10,8 @@ public class ExerciseRepository {
     private List<Exercise> exercises = new ArrayList<>();
 
     public ExerciseRepository() {
-        exercises.add(new Exercise(1, "Spring Boot", "What annotation marks a REST controller?", "easy", "@RestController"));
+        exercises.add(
+                new Exercise(1, "Spring Boot", "What annotation marks a REST controller?", "easy", "@RestController"));
         exercises.add(new Exercise(2, "Java", "Which keyword is used to inherit a class?", "easy", "extends"));
         exercises.add(new Exercise(3, "C", "What operator is used to get the address of a variable?", "medium", "&"));
         exercises.add(new Exercise(4, "Assembly", "Which register is the accumulator in x86?", "hard", "eax"));

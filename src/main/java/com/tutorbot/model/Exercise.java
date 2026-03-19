@@ -10,7 +10,8 @@ public class Exercise {
     @JsonIgnore
     private String correctAnswer;
 
-    public Exercise() {}
+    public Exercise() {
+    }
 
     public Exercise(int id, String topic, String question, String difficulty, String correctAnswer) {
         this.id = id;
@@ -21,18 +22,43 @@ public class Exercise {
     }
 
     // getters and Setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public int getId() {
+        return id;
+    }
 
-    public String getTopic() { return topic; }
-    public void setTopic(String topic) { this.topic = topic; }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    public String getQuestion() { return question; }
-    public void setQuestion(String question) { this.question = question; }
+    public String getTopic() {
+        return topic;
+    }
 
-    public String getDifficulty() { return difficulty; }
-    public void setDifficulty(String difficulty) { this.difficulty = difficulty; }
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
 
-    public String getCorrectAnswer() { return correctAnswer; }
-    public void setCorrectAnswer(String correctAnswer) { this.correctAnswer = correctAnswer; }
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public String getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    public String getCorrectAnswer() {
+        return correctAnswer;
+    }
+
+    public void setCorrectAnswer(String correctAnswer) {
+        this.correctAnswer = correctAnswer;
+    }
 }
